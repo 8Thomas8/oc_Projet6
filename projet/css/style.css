@@ -1,0 +1,709 @@
+@keyframes boingMenu {
+  0% {
+    transform: scale(1.1);
+  }
+
+  12% {
+    transform: scale(1.2);
+  }
+
+  25% {
+    transform: scale(1.3);
+  }
+
+  38% {
+    transform: scale(1.4);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+
+  62% {
+    transform: scale(1.2);
+  }
+
+  75% {
+    transform: scale(1.1);
+  }
+
+  88% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes boingCharacActive {
+  0% {
+    transform: translate(0px, -10px);
+  }
+
+  12.5% {
+    transform: translate(-5px, -5px);
+  }
+
+  25% {
+    transform: translate(-10px, 0);
+  }
+
+  37.5% {
+    transform: translate(-5px, -5px);
+  }
+
+  50% {
+    transform: translate(0px, -10px);
+  }
+
+  62.5% {
+    transform: translate(5px, -5px);
+  }
+
+  75% {
+    transform: translate(10px, 0px);
+  }
+
+  87.5% {
+    transform: translate(5px, -5px);
+  }
+
+  100% {
+    transform: translate(0px, -10px);
+  }
+}
+
+body {
+  background-image: url("../img/bg.jpg");
+  background-size: auto;
+  color: #e8e8e8;
+}
+
+#line {
+  position: fixed;
+  top: -2px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 5px;
+}
+
+/* Navigation style */
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 40px;
+}
+
+nav li {
+  transition: transform 250ms;
+  margin: 20px;
+}
+
+nav li:hover {
+  transform: scale(1.3);
+}
+
+nav li a {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #e8e8e8;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 1.6em;
+}
+
+/* Content style */
+#content {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+#darkArea {
+  background-color: rgba(0, 0, 0, 0.55);
+  margin-top: 30px;
+  padding-top: 25px;
+  padding-bottom: 35px;
+  text-align: center;
+  box-shadow: 10px 10px 20px black;
+}
+
+#rules {
+  background-color: rgba(0, 0, 0, 0.55);
+  margin-top: 100px;
+  padding-top: 25px;
+  padding-bottom: 35px;
+  text-align: center;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  box-shadow: 10px 10px 20px black;
+}
+
+#game,
+#battleArea,
+#gameOver {
+  display: none;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.55);
+  margin-top: 30px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  max-width: 782px;
+  min-width: 782px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 20px black;
+  position: relative;
+}
+
+#game {
+  display: flex;
+}
+
+#battleArea,
+#gameOver {
+  height: 360px;
+}
+
+#info {
+  margin-left: 20px;
+}
+
+/* Text Style */
+#darkArea h1,
+#gameOver h1,
+#gameOver h1 {
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.7);
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 3em;
+}
+
+#gameOver h2 {
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.7);
+  font-family: 'Fjalla One', sans-serif;
+}
+
+#darkArea p,
+#rules p {
+  margin: auto;
+  max-width: 700px;
+  width: 50%;
+  margin-bottom: 30px;
+  font-family: 'Poiret One', cursive;
+  font-size: 1.5em;
+}
+
+#rules h2 {
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.7);
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 2em;
+}
+
+#gameOver h2 {
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.7);
+  font-family: 'Fjalla One', sans-serif;
+}
+
+#rules p {
+  margin: auto;
+  max-width: 700px;
+  width: 50%;
+  margin-bottom: 30px;
+  font-family: 'Poiret One', cursive;
+  font-size: 1.5em;
+}
+
+/* button style */
+#darkArea #start,
+#gameOver #start {
+  display: block;
+  margin: auto;
+  background-color: rgba(255, 0, 0, 0);
+  color: #e8e8e8;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 1.5em;
+  width: 200px;
+  height: 50px;
+  border: 2px #e8e8e8 solid;
+  border-radius: 5px;
+  text-decoration: none;
+  line-height: 49px;
+  transition: background-color 100ms;
+}
+
+#darkArea #start:hover,
+#gameOver #start:hover {
+  background-color: rgba(104, 153, 227, 1);
+  animation: boingMenu 250ms;
+}
+
+#gameOver #start {
+  margin-top: 20px;
+}
+
+/* Socials links style */
+#sociallink {
+  margin-top: 60px;
+  text-align: center;
+}
+
+#sociallink i {
+  transform: scale(2);
+  color: #e8e8e8;
+  transition: transform 250ms;
+}
+
+#sociallink i:hover {
+  transform: scale(2.5);
+}
+
+/* Rules style */
+#popUpRules {
+  display: none;
+  width: 500px;
+  height: 420px;
+  position: absolute;
+  border: 1px black solid;
+  border-radius: 5px;
+  box-shadow: 10px 10px 20px black;
+  background-image: url("../img/bg.jpg");
+  filter: grayscale(0.8);
+  -webkit-filter: grayscale(0.8);
+  -moz-filter: grayscale(0.8);
+  -o-filter: grayscale(0.8);
+  -ms-filter: grayscale(0.8);
+  background-size: auto;
+  color: #e8e8e8;
+  top: 200px;
+  left: 50%;
+  margin-left: -250px;
+  z-index: 6;
+}
+
+#closePopUp {
+  position: absolute;
+  color: red;
+  right: 10px;
+  top: 5px;
+  border: 1px red solid;
+  border-radius: 5px;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#closePopUp:hover {
+  color: #e8e8e8;
+  background-color: red;
+}
+
+#rulesTitle {
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.7);
+  font-family: 'Fjalla One', sans-serif;
+  margin-left: 10px;
+}
+
+.spanRules {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.1em;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
+  padding-right: 5px;
+}
+
+.rulesText {
+  margin-left: 25px;
+  font-family: 'Fjalla One', sans-serif;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+/* Footer style */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-top: 2px #6B87C6 solid;
+  height: 30px;
+}
+
+footer p {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+/* GAME STYLE */
+progress {
+  -webkit-appearance: none;
+}
+
+/* Map style */
+table {
+  border-collapse: collapse;
+  border: 2px black solid;
+}
+
+td {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+
+.wallClass {
+  background-image: url('../img/wall.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px black solid;
+}
+
+.floorClass {
+  background-image: url('../img/floor.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px black solid;
+  z-index: 1;
+}
+
+.possibleDest {
+  cursor: pointer;
+  background-image: url('../img/possibleDest.jpg');
+}
+
+/* Weapons style */
+.weaponsMap,
+.weaponPlayer {
+  max-width: 100%;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.weaponPlayer {
+  z-index: 4;
+}
+
+/* Potions style */
+.potionsMap {
+  max-width: 100%;
+  z-index: 2;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+/*Players style */
+.playersMap {
+  display: block;
+  margin: auto;
+  height: 80%;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Players cards */
+.playerCard {
+  border: 2px black solid;
+  border-radius: 5px;
+  background-color: rgba(88, 86, 179, 0.5);
+  color: #e8e8e8;
+  opacity: 0.4;
+  transition: opacity 1s;
+  position: relative;
+}
+
+#playerTwo {
+  position: absolute;
+  bottom: 35px;
+}
+
+.playerImg {
+  margin-left: 25px;
+  text-align: center;
+}
+
+.playerCardWeaponImg {
+  width: 60px;
+}
+
+.playerLifeBar {
+  position: relative;
+}
+
+.playerLifeBar progress::-moz-progress-bar {
+  border: 1px black solid;
+  background: green;
+}
+
+.playerLifeBar progress::-webkit-progress-bar {
+  border: 1px black solid;
+  background: green;
+}
+
+.playerLifePercent {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 1px;
+  position: absolute;
+  top: -10px;
+  left: 65px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 0.7em;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+#playerTwoLifePercent {
+  top: -11px;
+}
+
+.damagesLogo {
+  transform: scale(0.2);
+  position: absolute;
+  top: 53px;
+  left: 25px;
+}
+
+.playerDamage p {
+  text-align: center;
+  padding-left: 30px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 0.8em;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.potionLogo {
+  position: absolute;
+  left: 68px;
+  top: 124px
+}
+
+.playerPotion p {
+  text-align: center;
+  padding-left: 30px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 0.8em;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.playerCardActive {
+  border: 2px rgba(0, 255, 43, 0.67) solid;
+  opacity: 1;
+}
+
+.playerCardActive .playerCardImg {
+  animation: boingCharacActive 1s infinite;
+}
+
+/* Battle Style */
+.playerBattleCardWeaponImg {
+  width: 60px;
+}
+
+.battleCard {
+  width: 240px;
+  border: 2px black solid;
+  border-radius: 5px;
+  background-color: rgba(88, 86, 179, 0.5);
+  color: #e8e8e8;
+  opacity: 0.4;
+  transition: opacity 1s;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+#vsLogo {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 2em;
+  font-style: italic;
+  position: absolute;
+  left: 390px;
+  top: 190px;
+}
+
+#battleCardplayerTwo {
+  position: absolute;
+  right: 80px;
+}
+
+#battleCardplayerOne {
+  position: absolute;
+  bottom: 30px;
+  left: 85px;
+}
+
+.battleCardActive {
+  border: 2px rgba(0, 255, 43, 0.67) solid;
+  opacity: 1;
+}
+
+.battleCardActive .playerBattleCardImg {
+  animation: boingCharacActive 1s infinite;
+}
+
+.battlePlayerImg {
+  margin-left: 25px;
+  text-align: center;
+}
+
+.battleplayerLifeBar {
+  text-align: center;
+  position: relative;
+}
+
+#battleplayerOneLifeBar1 progress::-moz-progress-bar,
+#battleplayerTwoLifeBar1 progress::-moz-progress-bar {
+  border: 1px black solid;
+  background: green;
+}
+
+#battleplayerOneLifeBar1 progress::-webkit-progress-bar,
+#battleplayerTwoLifeBar1 progress::-webkit-progress-bar {
+  border: 1px black solid;
+  background-color: white;
+}
+
+#battleplayerOneLifeBar1 progress::-webkit-progress-value,
+#battleplayerTwoLifeBar1 progress::-webkit-progress-value {
+  background: green;
+}
+
+#battleplayerOneLifeBar2,
+#battleplayerOneLifeBar3,
+#battleplayerTwoLifeBar2,
+#battleplayerTwoLifeBar3 {
+  display: none;
+}
+
+#battleplayerOneLifeBar2 progress::-moz-progress-bar,
+#battleplayerTwoLifeBar2 progress::-moz-progress-bar {
+  border: 1px black solid;
+  background: orange;
+}
+
+#battleplayerOneLifeBar2 progress::-webkit-progress-bar,
+#battleplayerTwoLifeBar2 progress::-webkit-progress-bar {
+  border: 1px black solid;
+  background: white;
+}
+
+#battleplayerOneLifeBar2 progress::-webkit-progress-value,
+#battleplayerTwoLifeBar2 progress::-webkit-progress-value {
+  background: orange !important;
+}
+
+#battleplayerOneLifeBar3 progress::-moz-progress-bar,
+#battleplayerTwoLifeBar3 progress::-moz-progress-bar {
+  border: 1px black solid;
+  background: red;
+}
+
+#battleplayerOneLifeBar3 progress::-webkit-progress-bar,
+#battleplayerTwoLifeBar3 progress::-webkit-progress-bar {
+  border: 1px black solid;
+  background: white;
+}
+
+#battleplayerOneLifeBar3 progress::-webkit-progress-value,
+#battleplayerTwoLifeBar3 progress::-webkit-progress-value {
+  background: red;
+}
+
+.battleplayerLifePercent {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 1px;
+  position: absolute;
+  top: -10px;
+  left: 105px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 0.7em;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.battleplayerOneLifePercent {
+  top: -10px;
+}
+
+.battlePlayerDamage {
+  position: relative;
+  padding-left: 25px;
+}
+
+.battleDamagesLogo {
+  transform: scale(0.2);
+  position: absolute;
+  top: -42px;
+  left: 65px;
+}
+
+.battlePlayerDamage p {
+  text-align: center;
+  padding-left: 0px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 0.8em;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.battlePlayerPotion {
+  position: relative;
+  padding-left: 25px;
+}
+
+.battlePotionLogo {
+  position: absolute;
+  left: 108px;
+}
+
+.battlePlayerPotion p {
+  text-align: center;
+  padding-left: 0px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 0.8em;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.battlePlayerChoice {
+  text-align: center;
+}
+
+.battleButton {
+  border-radius: 5px;
+  border: 1px grey solid;
+  height: 30px;
+  background: rgba(0, 0, 0, 0);
+  color: grey;
+  font-family: 'Fjalla One', sans-serif;
+  text-transform: uppercase;
+}
+
+.battleButtonActive {
+  border: 1px #e8e8e8 solid;
+  color: #e8e8e8;
+  cursor: pointer;
+}
+
+.battleButtonActive:hover {
+  animation: boingMenu 250ms;
+  background-color: rgba(104, 153, 227, 1);
+}

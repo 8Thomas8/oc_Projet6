@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Poiret+One" rel="stylesheet">
+    <title>BattleGame</title>
+  </head>
+
+  <body>
+    <div id="line"></div>
+    <nav>
+      <ul>
+        <li><a href="./index.html" title="Accueil"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="#" title="Règles" id="showRules"><i class="fas fa-question-circle"></i> Règles</a></li>
+      </ul>
+    </nav>
+
+    <div id="game">
+      <div id="gameMap">
+      </div>
+      <div id="info">
+        <div id="playerCards">
+          <div id="playerOne" class="playerCard">
+            <div id="playerOneImg" class="playerImg">
+            </div>
+            <div id="playerOneLifeBar" class="playerLifeBar">
+              <progress id="playerOneLifeProgressBar" value="0" max="100"></progress>
+              <p class="playerLifePercent" id="playerOneLifePercent"></p>
+            </div>
+            <div id="playerOneDamage" class="playerDamage">
+              <img src="./img/other/damages_logo.png" alt="DamagesLogo" title="Damages" class="damagesLogo" />
+              <p></p>
+            </div>
+            <div id="playerOnePotions" class="playerPotion">
+              <img src="./img/potions/potion.jpg" alt="PotionLogo" title="Potions" class="potionLogo" />
+              <p></p>
+            </div>
+          </div>
+
+          <div id="playerTwo" class="playerCard">
+            <div id="playerTwoImg" class="playerImg">
+            </div>
+            <div id="playerTwoLifeBar" class="playerLifeBar">
+              <progress id="playerTwoLifeProgressBar" value="0" max="100"></progress>
+              <p class="playerLifePercent" id="playerTwoLifePercent"></p>
+            </div>
+            <div id="playerTwoDamage" class="playerDamage">
+              <img src="./img/other/damages_logo.png" alt="DamagesLogo" title="Damages" class="damagesLogo" />
+              <p></p>
+            </div>
+            <div id="playerTwoPotions" class="playerPotion">
+              <img src="./img/potions/potion.jpg" alt="PotionLogo" title="Potions" class="potionLogo" />
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="battleArea">
+
+      <div id="battleCardplayerTwo" class="battleCard">
+        <div id="battleplayerTwoImg" class="battlePlayerImg">
+        </div>
+        <div id="battleplayerTwoLifeBar1" class="battleplayerLifeBar">
+          <progress class="battleplayerTwoLifeProgressBar" value="0" max="100"></progress>
+          <p class="battleplayerLifePercent battleplayerTwoLifePercent"></p>
+        </div>
+        <div id="battleplayerTwoLifeBar2" class="battleplayerLifeBar">
+          <progress class="battleplayerTwoLifeProgressBar" value="0" max="100"></progress>
+          <p class="battleplayerLifePercent battleplayerTwoLifePercent"></p>
+        </div>
+        <div id="battleplayerTwoLifeBar3" class="battleplayerLifeBar">
+          <progress class="battleplayerTwoLifeProgressBar" value="0" max="100"></progress>
+          <p class="battleplayerLifePercent battleplayerTwoLifePercent"></p>
+        </div>
+        <div id="battleplayerTwoDamage" class="battlePlayerDamage">
+          <img src="./img/other/damages_logo.png" alt="DamagesLogo" title="Damages" class="battleDamagesLogo" />
+          <p></p>
+        </div>
+        <div id="battleplayerTwoPotion" class="battlePlayerPotion">
+          <img src="./img/potions/potion.jpg" alt="PotionLogo" title="Potion" class="battlePotionLogo" />
+          <p></p>
+        </div>
+        <div id="battleplayerTwoChoice" class="battlePlayerChoice">
+          <button id="battleplayerTwoHit" class="battlePlayerHit battleButton">Attack</button>
+          <button id="battleplayerTwoDef" class="battlePlayerDef battleButton">Defend</button>
+          <button id="battleplayerTwoHeal" class="battlePlayerHeal battleButton">Heal</button>
+        </div>
+      </div>
+
+      <div id="vsLogo">
+        Vs.
+      </div>
+
+      <div id="battleCardplayerOne" class="battleCard">
+        <div id="battleplayerOneImg" class="battlePlayerImg">
+        </div>
+        <div id="battleplayerOneLifeBar1" class="battleplayerLifeBar">
+          <progress class="battleplayerOneLifeProgressBar" value="0" max="100"></progress>
+          <p class="battleplayerLifePercent battleplayerOneLifePercent"></p>
+        </div>
+        <div id="battleplayerOneLifeBar2" class="battleplayerLifeBar">
+          <progress class="battleplayerOneLifeProgressBar" value="0" max="100"></progress>
+          <p class="battleplayerLifePercent battleplayerOneLifePercent"></p>
+        </div>
+        <div id="battleplayerOneLifeBar3" class="battleplayerLifeBar">
+          <progress class="battleplayerOneLifeProgressBar" value="0" max="100"></progress>
+          <p class="battleplayerLifePercent battleplayerOneLifePercent"></p>
+        </div>
+        <div id="battleplayerOneDamage" class="battlePlayerDamage">
+          <img src="./img/other/damages_logo.png" alt="DamagesLogo" title="Damages" class="battleDamagesLogo" />
+          <p></p>
+        </div>
+        <div id="battleplayerOnePotion" class="battlePlayerPotion">
+          <img src="./img/potions/potion.jpg" alt="PotionLogo" title="Potion" class="battlePotionLogo" />
+          <p></p>
+        </div>
+        <div id="battleplayerOneChoice" class="battlePlayerChoice">
+          <button id="battleplayerOneHit" class="battlePlayerHit battleButton">Attack</button>
+          <button id="battleplayerOneDef" class="battlePlayerDef battleButton">Defend</button>
+          <button id="battleplayerOneHeal" class="battlePlayerHeal battleButton">Heal</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="gameOver">
+      <h1>GAME OVER</h1>
+      <h2 id="winner">LE GAGNANT EST: </h2>
+      <div id="winnerImg"></div>
+      <a href="./game.html" title="Rejouer" id="start"><i class="far fa-play-circle"></i> REJOUER</a>
+    </div>
+
+    <div id="popUpRules">
+    </div>
+
+    <div id="coordInfo">
+      <p></p>
+    </div>
+    <!-- <button id="buttonBattle">TEST BATTLE</button> -->
+
+    <footer>
+      <p>Réalisé par T. ROUSSEAU</p>
+    </footer>
+
+    <script src="jquery/jquery.js"></script>
+    <script src="js/var.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/classObjects.js"></script>
+    <script src="js/weapons.js"></script>
+    <script src="js/potions.js"></script>
+    <script src="js/players.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/game.js"></script>
+
+    <script>
+      $('#showRules').click(function () {
+        $('#popUpRules').css('display', 'inline');
+      });
+      $('#popUpRules').load('./rules.html');
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Poiret+One" rel="stylesheet">
+
+  <title>BattleGame</title>
+</head>
+
+<body>
+  <div id="line"></div>
+  <nav>
+    <ul>
+      <li><a href="./index.html" title="Accueil"><i class="fas fa-home"></i> Accueil</a></li>
+      <li><a href="#" title="Règles" id="showRules"><i class="fas fa-question-circle"></i> Règles</a></li>
+    </ul>
+  </nav>
+
+  <div id="content">
+    <div id="darkArea">
+      <h1>Battle Game</h1>
+      <p>Ce jeu a été créé dans le cadre d'un projet à
+        réaliser pour la formation Openclassrooms <span>Développeur d'application:
+          front end</span>.</p>
+      <p>Il est uniquement construit en HTML/CSS/Javascript(jQuery).</p>
+      <a href="./game.html" title="Lancer une partie" id="start"><i class="far fa-play-circle"></i> START GAME</a>
+    </div>
+
+    <div id="sociallink">
+      <a href="https://www.linkedin.com/in/tomrss/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+
+  <div id="popUpRules">
+  </div>
+
+  <footer>
+    <p>Réalisé par T. ROUSSEAU</p>
+  </footer>
+
+  <script src="jquery/jquery.js"></script>
+  <script>
+    $('#showRules').click(function() {
+      $('#popUpRules').css('display', 'inline');
+    });
+    $('#popUpRules').load('./rules.html');
+  </script>
+</body>
+
+</html>

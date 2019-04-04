@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Poiret+One" rel="stylesheet">
+
+  <title>BattleGame</title>
+</head>
+
+<body>
+  <div id="closePopUp"><i class="fas fa-times"></i></div>
+  <h2 id="rulesTitle">Règles du jeu</h2>
+  <p class="rulesText"><span class="spanRules">Tour par tour:</span> 1 déplacement ou 1 action par tour.</p>
+  <p class="rulesText"><span class="spanRules">Déplacements:</span> Bougez à +/- 3 cases maximum.</p>
+  <p class="rulesText"><span class="spanRules">Obstacles:</span> Un mur bloquera votre passage.</p>
+  <p class="rulesText"><span class="spanRules">Armes:</span> Chaque arme à des dommages différents.</p>
+  <p class="rulesText"><span class="spanRules">Potions:</span> Les potions rendent 15 points de vie.</p>
+  <p class="rulesText"><span class="spanRules">Combat:</span> 2 joueurs côte à côte engagent un combat</p>
+  <p class="rulesText"><span class="spanRules">Bouton de combat:</span>
+    <ul>
+      <li class="rulesText">Attack: Infligez les points de dégats à l'adversaire.</li>
+      <li class="rulesText">Defend: Recevez la moitié des points de dégats au prochain tour.</li>
+      <li class="rulesText">Heal: Utilisez une potion +15pv (vous devez avoir 85pv ou moins).</li>
+    </ul>
+  </p>
+</body>
+
+<script>
+  $('#closePopUp').click(function() {
+    $('#popUpRules').css('display', 'none');
+  });
+</script>
+
+</html>
